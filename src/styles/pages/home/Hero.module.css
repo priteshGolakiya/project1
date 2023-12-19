@@ -1,3 +1,81 @@
+.heroWrapper {
+  color: white;
+  position: relative;
+  padding-bottom: 2rem;
+  background-color: #131110;
+}
+
+.heroContainer {
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.orangCircle {
+  height: 4rem;
+  width: 4rem;
+  background-color: var(--orange-gradient);
+  border-radius: 50%; /* Change to 50% for a perfect circle */
+  position: absolute;
+  top: 1rem; /* Adjust as needed */
+  right: 1rem; /* Adjust as needed */
+  z-index: -1; /* Ensure it's behind other content */
+}
+
+.searchBar > input {
+  width: 23rem;
+  padding: 5px;
+}
+
+.stats {
+  width: 100%;
+  justify-content: space-between;
+}
+.stats>:nth-child(1){
+  font-size: 2rem ;
+}
+.stats>:nth-child(1)>:last-child{
+  color: orange;
+}
+
+
+/* left side  */
+.heroLeft {
+  gap: 3rem;
+  position: relative; /* Add this line */
+}
+
+.heroTitle {
+  position: relative;
+  z-index: 2;
+}
+.heroTitle > h1 {
+  font-weight: 600;
+  font-style: 3.8rem;
+  line-height: 3rem;
+}
+
+/* right side  */
+.heroRight {
+  display: flex;
+  flex-direction: column; /* or row, depending on your design */
+  align-items: flex-end; /* Align items to the right side */
+}
+
+.imageContainer {
+  width: 30rem;
+  height: 35rem;
+  overflow: hidden;
+  border-radius: 15rem 15rem 0 0;
+  border: 8px solid rgba(255, 255, 255, 0.263);
+}
+
+.imageContainer > img {
+  width: 100%;
+  height: 100%;
+}
+
+/* index.css  */
+
 :root {
   --primary: #1f3e72;
   --secondary: rgba(255, 255, 255, 0.78);
