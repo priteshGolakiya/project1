@@ -37,26 +37,38 @@ const Navbar = () => {
           close
         </span>
       </button>
-      <h1 className={styles["site-identity-logo"]}>Pritesh Golakiya</h1>
+      <img
+        src={"https://real-estate-web.pages.dev/logo.png"}
+        alt="logos"
+        className={styles["site-identity-logo"]}
+      ></img>
       <section className={styles["navigation-menu__labels"]}>
-        <NavLink className={styles["link"]} to="/">
-          Home
+        <NavLink className={styles["link"]} to="/" style={{ color: "#c5c5c5" }}>
+          Residencies
         </NavLink>
-        <NavLink className={styles["link"]} to="/about">
-          About
+        <NavLink
+          className={styles["link"]}
+          to="/about"
+          style={{ color: "#c5c5c5" }}
+        >
+          Our Value
         </NavLink>
-        <NavLink className={styles["link"]} to="/blog">
-          Blog
-        </NavLink>
-        <NavLink className={styles["link"]} to="/pages">
-          Pages
-        </NavLink>
-        <NavLink className={styles["link"]} to="/services">
-          Services
-        </NavLink>
-        <NavLink className={styles["link"]} to="/contact">
+        <NavLink
+          className={styles["link"]}
+          to="/blog"
+          style={{ color: "#c5c5c5" }}
+        >
           Contact Us
         </NavLink>
+        <NavLink
+          className={styles["link"]}
+          to="/pages"
+          style={{ color: "#c5c5c5" }}
+        >
+          Get Started
+        </NavLink>
+
+        <div className={styles["button"]}>Contact</div>
       </section>
     </nav>
   );

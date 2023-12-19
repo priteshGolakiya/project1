@@ -1,65 +1,28 @@
 import React from "react";
-import styles from "../styles/layout/Navbar.module.css";
-import { NavLink } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Layout from "./layout/Layout";
+import Home from "./pages/Home";
+import Services from "./pages/Services";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Blog from "./pages/Blog";
+import Pages from "./pages/Pages";
 
-const Navbar = () => {
-  const toggleMenuClicked = () => {
-    const body = document.body;
-    const openIcon = document.getElementById("open-icon");
-    const closeIcon = document.getElementById("close-icon");
-
-    body.classList.toggle(styles.open);
-
-    if (body.classList.contains(styles.open)) {
-      openIcon.style.display = "none";
-      closeIcon.style.display = "flex"; // Added semicolon here
-    } else {
-      openIcon.style.display = "flex";
-      closeIcon.style.display = "none"; // Added semicolon here
-    }
-  };
-
+function App() {
   return (
-    <nav className={styles["navigation-menu"]}>
-      <div
-        className={styles["navigation-menu__overlay"]}
-        onClick={toggleMenuClicked}
-      ></div>
-      <button
-        type="button"
-        className={styles["hamburger-menu"]}
-        onClick={toggleMenuClicked}
-      >
-        <span className="material-icons" id="open-icon">
-          menu
-        </span>
-        <span className="material-icons" id="close-icon">
-          close
-        </span>
-      </button>
-      <h1 className={styles["site-identity-logo"]}>Pritesh Golakiya</h1>
-      <section className={styles["navigation-menu__labels"]}>
-        <NavLink className={styles["link"]} to="/">
-          Home
-        </NavLink>
-        <NavLink className={styles["link"]} to="/about">
-          About
-        </NavLink>
-        <NavLink className={styles["link"]} to="/blog">
-          Blog
-        </NavLink>
-        <NavLink className={styles["link"]} to="/pages">
-          Pages
-        </NavLink>
-        <NavLink className={styles["link"]} to="/services">
-          Services
-        </NavLink>
-        <NavLink className={styles["link"]} to="/contact">
-          Contact Us
-        </NavLink>
-      </section>
-    </nav>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/pages" element={<Pages />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
-};
+}
 
-export default Navbar;
+export default App;
